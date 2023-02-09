@@ -26,7 +26,7 @@ namespace TestWorkingWithImage.Controllers
         [HttpPost]
         public void CreateImg(IFormFile image)
         {
-            if (image.Length > 0)
+            if (image != null && image.Length >0)
             {
                 using (FileStream fileStream = System.IO.File.Create(_webHostEnvironment.WebRootPath + "\\" + image.FileName))
                 {
